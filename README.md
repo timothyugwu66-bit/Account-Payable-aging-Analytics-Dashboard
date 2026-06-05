@@ -1,330 +1,366 @@
-# 📊 Accounts Payable Aging Analytics Dashboard
+# Account Payable Aging Analysis
 
-## Overview
+## Table of Contents
+1. [Project Overview](#project-overview)
+2. [Business Problem](#business-problem)
+3. [Objective](#objective)
+4. [Tools Used](#tools-used)
+5. [Process](#process)
+6. [Key Insights](#key-insights)
+7. [Recommendations](#recommendations)
+8. [Live Dashboard](#link-to-live-dashboard)
+9. [Connect With Me](#connect-with-me)
 
-This dashboard provides a comprehensive view of Perfect Marine's Accounts Payable (AP) position, helping management assess liquidity risk, vendor payment obligations, overdue liabilities, and cash flow exposure.
+---
 
-The analysis focuses on:
+# Project Overview
 
-* Total Accounts Payable obligations
-* Overdue liabilities
-* Vendor concentration risk
-* Aging bucket distribution
-* Cash flow exposure
-* Payment prioritization opportunities
+The Accounts Payable Aging Analytics Dashboard was developed to provide management with a clear view of Perfect Marine's outstanding supplier obligations, overdue payments, vendor exposure, and overall financial health.
 
-<img width="1337" height="794" alt="Screenshot 2026-06-04 174704" src="https://github.com/user-attachments/assets/ce05826f-3534-4ac9-b53e-5f770a704bfa" />
+The dashboard enables stakeholders to monitor Accounts Payable performance, identify payment risks, assess cash flow pressures, and make informed decisions regarding vendor payments and working capital management.
+
+By analyzing aging buckets, overdue balances, vendor liabilities, and invoice volumes, the dashboard supports proactive financial planning and risk mitigation.
+
+
+<img width="1337" height="794" alt="Screenshot 2026-06-04 174704" src="https://github.com/user-attachments/assets/7c8ccd64-bb7d-4062-87f7-dd1e5aac320d" />
+
+---
+
+# Business Problem
+
+Perfect Marine requires visibility into its Accounts Payable position to answer critical business questions:
+
+* How much does the company currently owe suppliers?
+* What proportion of outstanding payables is overdue?
+* Which vendors pose the greatest financial exposure?
+* How are liabilities distributed across aging categories?
+* Where are potential cash flow risks concentrated?
+* How can management prioritize payments to reduce financial risk?
+
+Without a centralized reporting solution, delayed payments can lead to:
+
+* Supplier relationship deterioration
+* Operational disruptions
+* Increased liquidity pressure
+* Late payment penalties
+* Poor working capital management
+
+
+<img width="1338" height="775" alt="Screenshot 2026-06-04 174734" src="https://github.com/user-attachments/assets/3342fae1-8f9a-46a6-850a-7ccf4ce03926" />
+
+---
+
+# Project Objectives
+
+The primary objectives of this dashboard are to:
+
+### Financial Visibility
+
+Provide a comprehensive view of outstanding Accounts Payable obligations.
+
+### Overdue Monitoring
+
+Identify overdue invoices and quantify overdue exposure.
+
+### Vendor Risk Assessment
+
+Analyze payable balances across vendors to identify concentration risks.
+
+### Aging Analysis
+
+Track liabilities across aging buckets to determine payment urgency.
+
+### Cash Flow Planning
+
+Support treasury and finance teams in managing cash requirements effectively.
+
+### Decision Support
+
+Enable management to prioritize vendor payments and reduce financial risk.
+
+<img width="1349" height="788" alt="Screenshot 2026-06-04 174759" src="https://github.com/user-attachments/assets/ff760c7f-f489-4181-a8d1-42a6df621561" />
 
 
 ---
 
-# Executive Summary
+# Tools Used
 
-Perfect Marine currently has **₦635.57M** in outstanding Accounts Payable obligations across **220 invoices** from **8 vendors**.
-
-Of the total payable balance, **₦412.35M (64.88%)** is overdue, indicating a significant short-term liquidity and supplier relationship risk.
-
-The majority of overdue obligations are concentrated in the **1–30 days bucket (34.01%)** and **31–60 days bucket (27.91%)**, suggesting that most liabilities are relatively recent and can still be managed proactively before escalating into severe supplier disputes or service interruptions.
-
-Vendor analysis reveals a concentration of liabilities among a small number of suppliers, with **Vertex Oilfield Services**, **Titan Procurement Ltd**, and **Alpha Supplies Ltd** holding the highest AP balances. This creates dependency risk and increases exposure if payment delays continue.
-
-Immediate attention should be given to overdue balances to preserve supplier confidence, avoid penalties, and maintain operational continuity.
+| Tool                            | Purpose                                              |
+| ------------------------------- | ---------------------------------------------------- |
+| Microsoft Power BI              | Dashboard Development & Data Visualization           |
+| Power Query                     | Data Transformation & Cleaning                       |
+| DAX (Data Analysis Expressions) | KPI Calculations and Measures                        |
+| Excel / ERP Data Source         | Accounts Payable Transaction Data                    |
+| Data Modeling                   | Relationship Management and Performance Optimization |
 
 ---
 
-# Key Performance Indicators (KPIs)
+# Project Process
 
-| Metric                 | Value    |
-| ---------------------- | -------- |
-| Total Amount           | ₦945.62M |
-| Total Accounts Payable | ₦635.57M |
-| Overdue AP             | ₦412.35M |
-| Overdue Percentage     | 64.88%   |
-| Vendors                | 8        |
-| Invoices               | 220      |
+## 1. Data Collection
 
----
+Accounts Payable transactional data was gathered from internal financial systems, including:
 
-# Financial Health Assessment
-
-## Positive Indicators
-
-✅ Vendor base remains manageable with only 8 active suppliers.
-
-✅ Most overdue balances are within 60 days, providing an opportunity for recovery before becoming critical.
-
-✅ Total AP remains concentrated among strategic vendors, enabling focused payment negotiations.
-
-<img width="1338" height="775" alt="Screenshot 2026-06-04 174734" src="https://github.com/user-attachments/assets/e838b650-af98-4b0a-be75-05b5e5f1b50a" />
-
+* Vendor details
+* Invoice records
+* Payment status
+* Due dates
+* Invoice amounts
 
 ---
 
-## Risk Indicators
+## 2. Data Cleaning and Transformation
 
-⚠️ **64.88% overdue ratio** indicates elevated liquidity pressure.
+The dataset was prepared by:
 
-⚠️ More than **₦412M** is already past due.
-
-⚠️ Potential supplier dissatisfaction and disruption risk if overdue balances continue increasing.
-
-⚠️ Heavy vendor concentration may increase operational vulnerability.
-
----
-
-# Aging Bucket Analysis
-
-## Distribution of Total AP
-
-| Aging Bucket | AP Amount    | Share of Total AP |
-| ------------ | ------------ | ----------------- |
-| Not Due      | ₦223.21M     | 35.12%            |
-| 1–30 Days    | ₦216.19M     | 34.01%            |
-| 31–60 Days   | ₦177.39M     | 27.91%            |
-| 61–90 Days   | ₦18.78M      | 2.95%             |
-| **Total**    | **₦635.57M** | **100%**          |
-
-<img width="1349" height="788" alt="Screenshot 2026-06-04 174759" src="https://github.com/user-attachments/assets/904f643e-66b1-4d69-8690-d13c72d60791" />
-
+* Removing duplicates
+* Handling missing values
+* Standardizing date formats
+* Validating invoice amounts
+* Creating aging classifications
 
 ---
 
-## Insights
+## 3. Data Modeling
 
-### 1. High Overdue Exposure
+Relationships were established between:
 
-The company has:
+* Vendors
+* Invoices
+* Aging Buckets
+* Cash Flow Categories
 
-**₦412.35M overdue**
+This enabled dynamic filtering and drill-down analysis.
 
-representing:
+---
+
+## 4. KPI Development
+
+Key metrics were created to monitor AP performance:
+
+* Total Amount
+* Total AP
+* Overdue AP
+* Overdue Percentage
+* Number of Vendors
+* Number of Invoices
+
+---
+
+## 5. Dashboard Design
+
+Interactive dashboards were developed to allow users to:
+
+* Filter by Vendor
+* Filter by Aging Bucket
+* Filter by Cash Flow Bucket
+* Analyze payment trends
+* Assess financial risk exposure
+
+
+---
+
+# Key Insights
+
+## 1. Significant Overdue Exposure
+
+Out of the total Accounts Payable balance of **₦635.57M**, approximately **₦412.35M** is overdue.
+
+This represents:
 
 **64.88% of total AP**
 
-This suggests that nearly two-thirds of supplier obligations have passed their payment terms.
+### Implication
+
+The company faces elevated short-term liquidity risk and may experience increased pressure from suppliers.
 
 ---
 
-### 2. Majority of Risk Lies in Early Delinquency
+## 2. Most Overdue Balances Are Recently Due
 
 The largest overdue category is:
 
-**1–30 Days = ₦216.19M (34.01%)**
+| Aging Bucket | Amount   |
+| ------------ | -------- |
+| 1–30 Days    | ₦216.19M |
 
-This indicates that immediate intervention could substantially reduce overdue exposure before liabilities age further.
+representing:
+
+**34.01% of Total AP**
+
+### Implication
+
+Most overdue invoices are still in an early delinquency stage and can be addressed before becoming severe collection issues.
 
 ---
 
-### 3. Limited Long-Term Delinquency
+## 3. Limited Long-Term Delinquency
 
 Only:
 
-**₦18.78M (2.95%)**
+**₦18.78M**
 
-falls within the **61–90 day bucket**.
+is aged between:
 
-This suggests the company has not yet accumulated substantial long-term overdue obligations.
+**61–90 Days**
+
+representing:
+
+**2.95% of Total AP**
+
+### Implication
+
+The company has not yet accumulated substantial long-term overdue obligations.
 
 ---
 
-### 4. Healthy Current Liability Portion
+## 4. Healthy Portion of Current Liabilities
 
 A total of:
 
-**₦223.21M (35.12%)**
+**₦223.21M**
 
 remains within payment terms.
 
-This provides flexibility for treasury planning and payment scheduling.
+This represents:
+
+**35.12% of Total AP**
+
+### Implication
+
+There is still flexibility in payment scheduling and cash management.
 
 ---
 
-# Vendor Analysis
+## 5. Vendor Concentration Risk Exists
 
-## Largest AP Concentrations
-
-Based on vendor balances shown in the dashboard:
-
-### High Exposure Vendors
+The dashboard indicates that the majority of AP balances are concentrated among a small number of vendors, including:
 
 * Vertex Oilfield Services
 * Titan Procurement Ltd
 * Alpha Supplies Ltd
 * CrestTech Nigeria
 
-These vendors account for the largest share of payable obligations and therefore represent the highest supplier risk exposure.
+### Implication
 
-<img width="1828" height="809" alt="Screenshot 2026-06-04 174824" src="https://github.com/user-attachments/assets/6136615d-f615-490d-b6b4-69bb176c833c" />
-
-
----
-
-## Key Insight
-
-The AP portfolio appears highly concentrated among a few suppliers.
-
-This means:
-
-* Delayed payments can impact critical operations.
-* Supplier negotiations can significantly improve liquidity.
-* Payment prioritization should focus on high-value vendors first.
+Supplier dependency increases operational and financial risk if payment delays persist.
 
 ---
 
-# Business Insights
+## 6. High Invoice Volume Requires Monitoring
 
-## Insight 1: Liquidity Pressure Exists
+The company manages:
 
-With nearly 65% of AP overdue, current cash reserves may not be sufficient to meet payment obligations according to agreed terms.
+**220 outstanding invoices**
 
-### Business Impact
+across:
 
-* Reduced financial flexibility
-* Increased working capital pressure
-* Potential supplier penalties
+**8 vendors**
 
----
+### Implication
 
-## Insight 2: Immediate Recovery Opportunity
-
-Since most overdue balances are less than 60 days old, management still has a strong opportunity to improve AP performance quickly.
-
-### Business Impact
-
-* Prevent transition into critical aging categories
-* Improve supplier confidence
-* Reduce future penalty costs
-
----
-
-## Insight 3: Supplier Dependency Risk
-
-Only 8 vendors support a payable balance exceeding ₦635M.
-
-### Business Impact
-
-* High bargaining power of suppliers
-* Increased operational disruption risk
-* Limited sourcing flexibility
-
----
-
-## Insight 4: Payment Prioritization Needed
-
-The current AP portfolio requires structured payment sequencing.
-
-### Business Impact
-
-* Better cash flow management
-* Reduced overdue percentages
-* Improved vendor relationships
+Manual tracking may become inefficient, increasing the risk of missed payment deadlines.
 
 
-<img width="1377" height="811" alt="Screenshot 2026-06-04 174848" src="https://github.com/user-attachments/assets/2cd729de-167a-440e-afb6-08a72d9c851c" />
+<img width="1828" height="809" alt="Screenshot 2026-06-04 174824" src="https://github.com/user-attachments/assets/8cf8d3fe-6fe8-4377-92e4-686da89b2931" />
 
 ---
 
 # Recommendations
 
-## Short-Term Actions (0–30 Days)
+## 1. Prioritize Overdue Payments
 
-### 1. Prioritize High-Value Overdue Invoices
+Focus on settling invoices within the:
 
-Focus on:
+* 1–30 day bucket
+* 31–60 day bucket
 
-* 1–30 day overdue invoices
-* Strategic suppliers
-* Critical operational vendors
+to prevent migration into older aging categories.
 
-**Expected Outcome:**
-Reduction in overdue percentage and improved supplier trust.
+### Expected Benefit
 
----
-
-### 2. Establish Vendor Payment Tiers
-
-Create payment priority groups:
-
-| Tier   | Description                  |
-| ------ | ---------------------------- |
-| Tier 1 | Critical operational vendors |
-| Tier 2 | High-value suppliers         |
-| Tier 3 | Non-critical vendors         |
-
-**Expected Outcome:**
-More effective cash deployment.
+Reduction in overdue exposure and improved supplier confidence.
 
 ---
 
-### 3. Negotiate Payment Extensions
+## 2. Implement Vendor Payment Prioritization
 
-Engage key vendors to:
+Classify suppliers into payment tiers based on:
 
-* Extend payment terms
-* Restructure outstanding balances
-* Introduce installment plans
+* Operational importance
+* Invoice value
+* Business impact
 
-**Expected Outcome:**
+### Expected Benefit
+
+More efficient allocation of limited cash resources.
+
+---
+
+## 3. Negotiate Extended Payment Terms
+
+Engage major vendors to discuss:
+
+* Payment extensions
+* Installment arrangements
+* Revised credit terms
+
+### Expected Benefit
+
 Improved short-term liquidity.
 
 ---
 
-# Medium-Term Actions (30–90 Days)
+## 4. Strengthen Cash Flow Forecasting
 
-### 4. Strengthen AP Monitoring
+Integrate Accounts Payable planning into:
 
-Implement:
-
-* Weekly AP reviews
-* Aging trend monitoring
-* Vendor risk tracking
-
-**Expected Outcome:**
-Early identification of payment bottlenecks.
-
----
-
-### 5. Improve Cash Flow Forecasting
-
-Align:
-
+* Treasury forecasting
 * Procurement planning
-* Treasury forecasts
-* Vendor payment schedules
+* Budget management
 
-**Expected Outcome:**
+### Expected Benefit
+
 Reduced future overdue balances.
 
 ---
 
-### 6. Automate AP Alerts
+## 5. Introduce Automated AP Monitoring
 
-Introduce automated notifications for:
+Deploy alerts for:
 
 * Upcoming due dates
-* Escalating aging buckets
-* High-risk vendor accounts
+* Overdue invoices
+* High-risk vendors
 
-**Expected Outcome:**
-Improved payment discipline.
+### Expected Benefit
+
+Improved payment discipline and reduced manual oversight.
 
 ---
 
-# Expected Business Outcomes
+## 6. Monitor Vendor Concentration Risk
 
-| Initiative                     | Expected Result                     |
-| ------------------------------ | ----------------------------------- |
-| Overdue Invoice Prioritization | Reduce overdue percentage below 50% |
-| Vendor Negotiations            | Improve working capital flexibility |
-| AP Monitoring                  | Earlier risk detection              |
-| Cash Flow Planning             | Better liquidity management         |
-| Payment Tiering                | Optimized cash allocation           |
-| AP Automation                  | Reduced manual oversight            |
+Track supplier exposure regularly and diversify procurement where possible.
+
+### Expected Benefit
+
+Reduced dependency on a small number of vendors.
+
+---
+
+# Business Impact
+
+The dashboard provides management with a single source of truth for monitoring Accounts Payable performance and financial obligations. By identifying overdue balances, aging risks, and vendor concentration issues, stakeholders can take proactive action to improve liquidity, strengthen supplier relationships, and optimize working capital management.
 
 ---
 
 # Conclusion
 
-Perfect Marine's Accounts Payable position reveals a **moderate-to-high liquidity risk**, driven by **₦412.35M in overdue obligations representing 64.88% of total AP**. While the majority of overdue balances remain within the early aging buckets, immediate action is required to prevent escalation into long-term delinquency.
+The analysis reveals that Perfect Marine currently carries **₦635.57M** in Accounts Payable obligations, with **64.88% (₦412.35M)** already overdue. While the majority of overdue balances remain within the early aging stages, prompt action is required to prevent escalation into long-term delinquency. Through improved payment prioritization, vendor management, cash flow forecasting, and AP monitoring, the organization can significantly reduce financial risk and enhance operational stability.
 
-Management should prioritize high-value overdue invoices, strengthen vendor engagement, and improve cash flow planning to reduce overdue exposure, protect supplier relationships, and maintain operational stability. By focusing on early-stage overdue balances and implementing structured AP governance, the organization can significantly improve its working capital position and overall financial resilience.
+# Live dashboard
+[View My Live Dashboard](https://app.powerbi.com/groups/me/reports/b422dcb0-f97a-4c3c-8f0c-0d5e7e2e3af9/28d70c090ca0d6d5d4ba?experience=power-bi)
+
+# Connect with Me
+(www.linkedin.com/in/chukwuebuka-ugwu-01a052194)
